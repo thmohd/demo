@@ -3,6 +3,9 @@
 namespace CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Subindustry
@@ -28,6 +31,12 @@ class Subindustry
      */
     private $name;
 
+    /**
+     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Industry")
+     * @ORM\JoinColumn(name="industry_id", referencedColumnName="id")
+     */
+    private $industry;
 
     /**
      * useful for ArrayCollection
@@ -37,6 +46,16 @@ class Subindustry
 
         return $this->getName();
     }
+    /**
+     * Define the FK as array collection to use them for
+     * list in the form.
+     */
+    public function __construct()
+    {
+
+        $this->industry = new ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -68,5 +87,28 @@ class Subindustry
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set industry
+     *
+     * @param \CoreBundle\Entity\Industry $industry
+     * @return Subindustry
+     */
+    public function setIndustry(\CoreBundle\Entity\Industry $industry = null)
+    {
+        $this->industry = $industry;
+
+        return $this;
+    }
+
+    /**
+     * Get industry
+     *
+     * @return \CoreBundle\Entity\Industry 
+     */
+    public function getIndustry()
+    {
+        return $this->industry;
     }
 }
