@@ -1,0 +1,19 @@
+core_occupation:
+    resource: "@CoreBundle/Resources/config/routing/occupation.yml"
+    prefix:   /occupation
+
+core_industry:
+    resource: "@CoreBundle/Resources/config/routing/industry.yml"
+    prefix:   /industry
+
+core_user:
+    resource: "@CoreBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+core_subindustry:
+    resource: "@CoreBundle/Resources/config/routing/subindustry.yml"
+    prefix:   /subindustry
+
+core_homepage:
+    path:     /
+    defaults: { _controller: "CoreBundle:User:new" }

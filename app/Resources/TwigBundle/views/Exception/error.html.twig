@@ -1,0 +1,21 @@
+{% extends app.user
+? '::base.html.twig'
+: 'FOSUserBundle::layout.html.twig'
+%}
+
+{% block body %}
+
+    <div id="pageErrors">
+        <p><strong>Oops! Something went wrong</strong></p>
+
+        {% if status_code == 404 %}
+            <p>We are sorry, but the page you are trying to reach is not exist!</p>
+        {% elseif status_code == 403 %}
+            <p>We are sorry, but you are not authorized to access this area!</p>
+        {% else %}
+            <p>We are sorry for that, please try again or contact us on <a href="mailto:mohammad@althayabeh.com" class="btn-link">mohammad@althayabeh.com</a></p>
+        {% endif %}
+    </div>
+
+{% endblock  %}
+

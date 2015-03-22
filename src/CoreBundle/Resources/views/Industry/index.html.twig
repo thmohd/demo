@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <h1>Industry list</h1>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('industry_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.name }}</td>
+                    <td>
+                        <a  class="btn btn-sm btn-info" href="{{ path('industry_show', { 'id': entity.id }) }}">show</a>
+                        <a class="btn btn-sm btn-success" href="{{ path('industry_edit', { 'id': entity.id }) }}">edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="featured" class="right">
+        <a href="{{ path('industry_new') }}" class="btn btn-primary"> Create a new Category </a>
+    </div>
+
+    {% endblock %}
+
+

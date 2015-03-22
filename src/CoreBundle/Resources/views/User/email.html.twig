@@ -1,0 +1,43 @@
+<html>
+<head>
+
+    <style>
+        .panel{
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+            border-color: #d6e9c6;
+        }
+        .panel-heading{
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .panel-body{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+{% block body -%}
+    <div class="panel">
+        <div class="panel-heading">New User Registration</div>
+        <div class="panel-body">
+            <p><strong>Name: </strong> {{ entity.firstName  }}{{ entity.lastName }}</p>
+            <p><strong>Title: </strong> {{ entity.userTitle  }}</p>
+            <p><strong>Phone: </strong> {{ entity.phone  }}</p>
+            <p><strong>Email: </strong> {{ entity.userEmail  }}</p>
+            <p><strong>Company: </strong> {{ entity.company  }}</p>
+            <p><strong>Occupation: </strong> {{ entity.occupation  }}</p>
+            <p><strong>Industry: </strong> {{ entity.industry  }} / {{ entity.subindustry  }}</p>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>SubIndustry edit</h1>
+
+    {{ form(edit_form) }}
+
+    {{ form(edit_form) }}
+
+    <div id="featured" class="left">
+        <a href="{{ path('subindustry') }}" class="btn btn-default"><span class="fa fa-reply"></span> Back to the list</a>
+        {{ form_start(delete_form) }}
+        {{ form_widget(delete_form.submit, {'attr': {'class': 'btn-danger'}}) }}
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

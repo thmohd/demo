@@ -1,0 +1,30 @@
+occupation:
+    path:     /
+    defaults: { _controller: "CoreBundle:Occupation:index" }
+
+occupation_show:
+    path:     /{id}/show
+    defaults: { _controller: "CoreBundle:Occupation:show" }
+
+occupation_new:
+    path:     /new
+    defaults: { _controller: "CoreBundle:Occupation:new" }
+
+occupation_create:
+    path:     /create
+    defaults: { _controller: "CoreBundle:Occupation:create" }
+    methods:  POST
+
+occupation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CoreBundle:Occupation:edit" }
+
+occupation_update:
+    path:     /{id}/update
+    defaults: { _controller: "CoreBundle:Occupation:update" }
+    methods:  [POST, PUT]
+
+occupation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CoreBundle:Occupation:delete" }
+    methods:  [POST, DELETE]

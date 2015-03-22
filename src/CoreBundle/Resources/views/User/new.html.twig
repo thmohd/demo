@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+
+    {{ form_start(form, {'attr': {'id': 'reg'}}) }}
+
+
+
+    {{ form_widget(form) }}
+
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" required="required" name="agreement" id="agreement">
+            <a href="#" class="jsClick" data-toggle="modal" data-target="#coreModal" data-ptitle="Terms & Conditions"
+               data-route="{{app.request.getBaseURL()}}/agreement.html">I agree to the Terms & Conditions</a>
+        </label>
+    </div>
+
+    <button type="submit" id="submitBtn" data-loading-text="Loading..." class="btn btn-primary pull-right" autocomplete="off">Create Account</button>
+    {{ form_end(form) }}
+{% endblock %}
+
+

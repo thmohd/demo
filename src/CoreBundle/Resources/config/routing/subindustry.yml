@@ -1,0 +1,30 @@
+subindustry:
+    path:     /
+    defaults: { _controller: "CoreBundle:Subindustry:index" }
+
+subindustry_show:
+    path:     /{id}/show
+    defaults: { _controller: "CoreBundle:Subindustry:show" }
+
+subindustry_new:
+    path:     /new
+    defaults: { _controller: "CoreBundle:Subindustry:new" }
+
+subindustry_create:
+    path:     /create
+    defaults: { _controller: "CoreBundle:Subindustry:create" }
+    methods:  POST
+
+subindustry_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CoreBundle:Subindustry:edit" }
+
+subindustry_update:
+    path:     /{id}/update
+    defaults: { _controller: "CoreBundle:Subindustry:update" }
+    methods:  [POST, PUT]
+
+subindustry_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CoreBundle:Subindustry:delete" }
+    methods:  [POST, DELETE]

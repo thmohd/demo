@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User</h1>
+
+<div class="table-responsive">
+    <table class="table">
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ entity.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ entity.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Useremail</th>
+                <td>{{ entity.userEmail }}</td>
+            </tr>
+            <tr>
+                <th>Userpassword</th>
+                <td>{{ entity.userPassword }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ entity.company }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ entity.phone }}</td>
+            </tr>
+            <tr>
+                <th>Usertitle</th>
+                <td>{{ entity.userTitle }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <div id="featured" class="left">
+        <a href="{{ path('user') }}" class="btn btn-default"><span class="fa fa-reply"></span> Back to the list</a>
+        <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="btn btn-info"><span class="fa fa-edit"></span> Edit</a>
+        {{ form_start(delete_form) }}
+        {{ form_widget(delete_form.submit, {'attr': {'class': 'btn-danger'}}) }}
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

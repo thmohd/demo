@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: demo
+    database_user: root
+    database_password: root
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: mohammad@sageagestrategies.com
+    mailer_password: 30647896@sage
+    locale: en
+    secret: acb1344cdbf59e832cb2e9f84d9fb0a5aedcd236
