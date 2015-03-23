@@ -17,7 +17,8 @@ Make it works:
 
 First: change the parameter file ( app/config/parameters.yml) ->
 
--parameters:
+parameters:
+------------------
     - database_driver: pdo_mysql  ///your db driver
     - database_host: 127.0.0.1  /// host 
     - database_port: null  
