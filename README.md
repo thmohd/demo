@@ -4,6 +4,10 @@ Registration Form
 This is built using Symfony2 and Doctrine
 it works with different dabases , all you need is to change "database_driver" in parameters file to your DB type
 
+Extra work
+-------------
+The sidebar menu have full control and manage (it supposed to be under admin control - but left to make it easy to notice) all entries in DB with edit and delete and create right away.
+
 Make it works:
 --------------
 
@@ -31,5 +35,7 @@ parameters:
    Notes
     -------------------------------
    - no db files because I am using ORM so you can find the entity classes instead
+   
+
    
     
