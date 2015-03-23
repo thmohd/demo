@@ -3,6 +3,8 @@
 namespace CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Occupation
@@ -84,5 +86,28 @@ class Occupation
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set industry
+     *
+     * @param \CoreBundle\Entity\Industry $industry
+     * @return Occupation
+     */
+    public function setIndustry(\CoreBundle\Entity\Industry $industry = null)
+    {
+        $this->industry = $industry;
+
+        return $this;
+    }
+
+    /**
+     * Get industry
+     *
+     * @return \CoreBundle\Entity\Industry 
+     */
+    public function getIndustry()
+    {
+        return $this->industry;
     }
 }
