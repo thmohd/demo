@@ -68,10 +68,15 @@ class UserController extends Controller
      * @param $entity
      */
     public function send_email($entity){
+
+        $subject = $this->container->getParameter('mailer_subject');
+        $sender =  $this->container->getParameter('mailer_sender');
+        $reciver = $this->container->getParameter('mailer_reciver');
+
         $message = \Swift_Message::newInstance()
-            ->setSubject('New User')
-            ->setFrom('info@demo.com')
-            ->setTo('althayabeh.mohammad@gmail.com')
+            ->setSubject($subject)
+            ->setFrom($sender)
+            ->setTo($reciver)
             ->setBody(
                 $this->renderView(
                     'CoreBundle:User:email.html.twig',
