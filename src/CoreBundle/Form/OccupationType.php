@@ -16,6 +16,7 @@ class OccupationType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('industry','entity',array("class"=>"CoreBundle:Industry"))
         ;
     }
     

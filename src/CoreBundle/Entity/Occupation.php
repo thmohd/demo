@@ -30,12 +30,28 @@ class Occupation
 
 
     /**
+     * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Industry")
+     * @ORM\JoinColumn(name="industry_id", referencedColumnName="id")
+     */
+    private $industry;
+
+    /**
      * useful for ArrayCollection
      * @return string
      */
     public function __toString(){
 
         return $this->getName();
+    }
+    /**
+     * Define the FK as array collection to use them for
+     * list in the form.
+     */
+    public function __construct()
+    {
+
+        $this->industry = new ArrayCollection();
     }
     /**
      * Get id
